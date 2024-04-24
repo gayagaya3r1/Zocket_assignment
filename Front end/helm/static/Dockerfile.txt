@@ -1,0 +1,6 @@
+FROM nginx    # Use a lightweight Nginx image
+RUN rm -rf /usr/share/nginx/html/index.html
+RUN rm -rf /etc/nginx/nginx.conf
+RUN rm -rf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf   # Copy nginx configuration file
+ADD static /usr/share/nginx/html/ # Copy built frontend files to nginx directory
